@@ -4,12 +4,14 @@
 #include <vector>
 
 #include "Object.h"
+#include "Player.h"
 
 namespace tgc {
 
-	typedef std::vector<int> vector2i;
-	typedef std::vector<double> vector2f;
+	//typedef std::vector<int> vector2i;
+	//typedef std::vector<double> vector2f;
 	typedef _Object* Object;
+	typedef _Player* Player;
 
 	class Game {
 	private:
@@ -17,13 +19,18 @@ namespace tgc {
 	public:
 		Game() {};
 		void draw(Object);
-		//void update();
+		void update();
 	};
 }
 
 void tgc::Game::draw(Object obj)
 {
 	objects.insert(obj);
+	
+}
+
+void tgc::Game::update()
+{
 	//and draw all objects
 	for (Object obj : objects) obj->draw();
 }
