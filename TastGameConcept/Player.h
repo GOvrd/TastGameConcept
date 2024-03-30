@@ -5,8 +5,9 @@
 namespace tgc {
 
 	typedef std::vector<double> vector2f;
+	typedef _Object* Object;
 
-	class Player : public Object{
+	class Player : public _Object{
 	private:
 	protected:
 	public:

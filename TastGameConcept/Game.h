@@ -1,27 +1,29 @@
 #pragma once
 #include <iostream>
-#include <list>
+#include <set>
 #include <vector>
 
 #include "Object.h"
 
 namespace tgc {
+
 	typedef std::vector<int> vector2i;
 	typedef std::vector<double> vector2f;
-
+	typedef _Object* Object;
 
 	class Game {
 	private:
-		std::list<Object> objects;
+		std::set<Object> objects;
 	public:
 		Game() {};
-		void draw(std::list<Object>&);
-		void update();
+		void draw(Object);
+		//void update();
 	};
 }
 
-void tgc::Game::draw(std::list<Object>& newObjList)
+void tgc::Game::draw(Object obj)
 {
-	objects.clear();
-	objects = newObjList;
+	objects.insert(obj);
+	//and draw all objects
+	for (Object obj : objects) obj->draw();
 }
