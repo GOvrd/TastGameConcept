@@ -1,8 +1,6 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include  <list>
-#include <set>
 #include "Object.h"
 #include "Item.h"
 
@@ -24,12 +22,14 @@ namespace tgc {
 		void moveX(int);
 		void moveY(int);
 		void move(int, int);
+		bool addItem(Item);
+		Item getItem();//<---DO-IT---
 	};
 }
 
 tgc::_Player::_Player()
 {
-	_inventory.resize(INVENTORY_SIZE, nullptr);
+	//_inventory.resize(INVENTORY_SIZE, nullptr);//KOCTÜIL`
 }
 
 void tgc::_Player::draw()
@@ -51,4 +51,14 @@ void tgc::_Player::move(int dx, int dy)
 {
 	_pos[0] += dx;
 	_pos[1] += dy;
+}
+
+bool tgc::_Player::addItem(Item item)
+{
+	if (_inventory.size() != INVENTORY_SIZE) {
+		_inventory.push_back(item);
+		return true;
+	}
+	else
+		return false;
 }
