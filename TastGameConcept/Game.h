@@ -5,6 +5,7 @@
 
 #include "Object.h"
 #include "Player.h"
+#include "Item.h"
 
 namespace tgc {
 
@@ -12,6 +13,7 @@ namespace tgc {
 	//typedef std::vector<double> vector2f;
 	typedef _Object* Object;
 	typedef _Player* Player;
+	typedef _Item* Item;
 
 	class Game {
 	private:

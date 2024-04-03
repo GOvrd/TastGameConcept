@@ -1,14 +1,20 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include "Object.h"
+#include "Item.h"
+
+#define INVENTORY_SIZE 10
 
 namespace tgc {
 
 	typedef std::vector<double> vector2f;
-	typedef _Object* Object;
+	//typedef _Object* Object;
+	typedef _Item* Item;
 
 	class _Player : public _Object{
 	private:
+		std::vector<Item> _inventory;
 	protected:
 	public:
 		_Player() {};
@@ -21,21 +27,21 @@ namespace tgc {
 
 void tgc::_Player::draw()
 {
-	std::cout << pos[0] << ", " << pos[1] << "\n";
+	std::cout << _pos[0] << ", " << _pos[1] << "\n";
 }
 
 void tgc::_Player::moveX(int dx)
 {
-	pos[0] += dx;
+	_pos[0] += dx;
 }
 
 void tgc::_Player::moveY(int dy)
 {
-	pos[1] += dy;
+	_pos[1] += dy;
 }
 
 void tgc::_Player::move(int dx, int dy)
 {
-	pos[0] += dx;
-	pos[1] += dy;
+	_pos[0] += dx;
+	_pos[1] += dy;
 }
