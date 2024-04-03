@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include  <list>
+#include <set>
 #include "Object.h"
 #include "Item.h"
 
@@ -8,8 +10,8 @@
 
 namespace tgc {
 
-	typedef std::vector<double> vector2f;
 	//typedef _Object* Object;
+	typedef std::vector<double> vector2f;
 	typedef _Item* Item;
 
 	class _Player : public _Object{
@@ -17,12 +19,17 @@ namespace tgc {
 		std::vector<Item> _inventory;
 	protected:
 	public:
-		_Player() {};
+		_Player();
 		void draw() override;
 		void moveX(int);
 		void moveY(int);
 		void move(int, int);
 	};
+}
+
+tgc::_Player::_Player()
+{
+	_inventory.resize(INVENTORY_SIZE, nullptr);
 }
 
 void tgc::_Player::draw()
