@@ -13,6 +13,8 @@ namespace tgc {
 
 	//typedef std::vector<int> vector2i;
 	//typedef std::vector<double> vector2f;
+
+
 	typedef _Object* Object;
 	typedef _Player* Player;
 	typedef _Item* Item;

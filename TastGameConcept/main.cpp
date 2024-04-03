@@ -4,13 +4,20 @@
 
 int main() {
 	tgc::Game g;
-	g.setFPSLimit(24);
+	g.setFPSLimit(1);
 	tgc::Player pl1 = new tgc::_Player;
+
 	int i = 0;
-	while (true) {
-		if (i == 10) break;
+	while (i != 10) {
 		pl1->moveX(1);
+		
+		if (i < 3) {
+			tgc::Item it = new tgc::_Item;
+			pl1->addItem(it);
+		}
+		
 		g.draw(pl1);
+		pl1->printAllItems();
 		i++;
 		g.update();
 	}
