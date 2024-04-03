@@ -23,12 +23,25 @@ namespace tgc {
 	private:
 		std::set<Object> _objects;
 		int _fps = 60;
+		int _col, _row;
+		char** _buffer = nullptr;
 	public:
-		Game() {};
+		Game(int, int);
 		void draw(Object);
 		void update();
 		void setFPSLimit(int);
 	};
+}
+
+tgc::Game::Game(int col = 5, int row = 5)
+{
+	_col = col;
+	_row = row;
+	_buffer = new char*[_col];
+	for (int i = 0; i < _col; i++) {
+		_buffer[i] = new char[_row];
+		for (int j = 0; j < _row; j++)_buffer[i][j] = ' ';
+	}
 }
 
 void tgc::Game::draw(Object obj)
