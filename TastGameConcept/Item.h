@@ -12,6 +12,7 @@ namespace tgc {
 		_Item() {};
 		std::string getName() const;
 		std::string getTier() const;
+		void print();
 	};
 }
 
@@ -23,4 +24,9 @@ std::string tgc::_Item::getName() const
 std::string tgc::_Item::getTier() const
 {
 	return _tier;
+}
+
+void tgc::_Item::print()
+{
+	std::cout << "Name: " << _name << "Tier: " << _tier << "\n";
 }

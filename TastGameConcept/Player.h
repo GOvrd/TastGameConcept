@@ -22,6 +22,7 @@ namespace tgc {
 		void moveX(int);
 		void moveY(int);
 		void move(int, int);
+		void printAllItems();
 		bool addItem(Item);
 		Item getItem();//<---DO-IT---
 	};
@@ -51,6 +52,11 @@ void tgc::_Player::move(int dx, int dy)
 {
 	_pos[0] += dx;
 	_pos[1] += dy;
+}
+
+void tgc::_Player::printAllItems()
+{
+	for (Item item : _inventory) item->print();
 }
 
 bool tgc::_Player::addItem(Item item)
