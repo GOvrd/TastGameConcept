@@ -18,7 +18,7 @@ namespace tgc {
 	protected:
 	public:
 		_Player();
-		void draw() override;
+		char draw() override;
 		void moveX(int);
 		void moveY(int);
 		void move(int, int);
@@ -30,12 +30,13 @@ namespace tgc {
 
 tgc::_Player::_Player()
 {
+	_symbol = 'x';
 	//_inventory.resize(INVENTORY_SIZE, nullptr);//KOCTÜIL`
 }
 
-void tgc::_Player::draw()
+char tgc::_Player::draw()
 {
-	std::cout << _pos[0] << ", " << _pos[1] << "\n";
+	return _symbol;
 }
 
 void tgc::_Player::moveX(int dx)

@@ -10,9 +10,12 @@ namespace tgc {
 	private:
 	protected:
 	public:
-		_Wall() {};
-		void draw()override {
-			std::cout << '#';
-		}
+		_Wall() { _symbol = '#'; };
+		char draw()override;
 	};
+}
+
+char tgc::_Wall::draw()
+{
+	return _symbol;
 }
