@@ -10,9 +10,17 @@ namespace tgc {
 	private:
 	protected:
 	public:
-		_Wall() { _symbol = '#'; };
+		//_Wall() {};
+		_Wall(int, int);
 		char draw()override;
 	};
+}
+
+tgc::_Wall::_Wall(int x = 0, int y = 0)
+{
+	_symbol = '#';
+	_pos[0] = x;
+	_pos[1] = y;
 }
 
 char tgc::_Wall::draw()

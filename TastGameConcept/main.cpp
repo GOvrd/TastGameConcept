@@ -3,12 +3,15 @@
 #include "Game.h"
 
 int main() {
-	tgc::Game g(15, 15);
+	tgc::Game g(10, 10);
 	g.setFPSLimit(1);
-	tgc::Player pl1 = new tgc::_Player;
+	g.loadMap("Map.txt");
+	tgc::Player pl1 = new tgc::_Player(1, 1);
 	int i = 0;
+	int speed = 1;
 	while (i != 10) {
-		pl1->move(1, 1);
+		if (pl1->getPos().at(0) > 5) speed = -1;
+		pl1->move(speed, speed);
 		
 		g.draw(pl1);
 		g.update();

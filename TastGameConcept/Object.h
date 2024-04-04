@@ -9,7 +9,7 @@ namespace tgc {
 	protected:
 		char _symbol;
 		bool _visible = true;
-		vector2i _pos = { 1, 1 };
+		vector2i _pos = { 0, 0};
 	public:
 		_Object() {};
 		void setPos(int, int);

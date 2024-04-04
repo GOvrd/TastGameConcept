@@ -17,7 +17,8 @@ namespace tgc {
 		std::vector<Item> _inventory;
 	protected:
 	public:
-		_Player();
+		//_Player();
+		_Player(int, int);
 		char draw() override;
 		void moveX(int);
 		void moveY(int);
@@ -28,10 +29,17 @@ namespace tgc {
 	};
 }
 
-tgc::_Player::_Player()
+//tgc::_Player::_Player()
+//{
+//	_symbol = 'x';
+//	//_inventory.resize(INVENTORY_SIZE, nullptr);//KOCTÜIL`
+//}
+
+tgc::_Player::_Player(int x = 0, int y = 0)
 {
 	_symbol = 'x';
-	//_inventory.resize(INVENTORY_SIZE, nullptr);//KOCTÜIL`
+	_pos[0] = x;
+	_pos[1] = y;
 }
 
 char tgc::_Player::draw()
