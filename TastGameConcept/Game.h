@@ -78,6 +78,7 @@ void tgc::Game::draw(Object obj)
 void tgc::Game::update()
 {
 	//draw all objects
+	time_t start = time(0);
 	system("cls");
 	_clearBuffer();
 	for (Object obj : _objects) {
@@ -87,7 +88,7 @@ void tgc::Game::update()
 		//obj->draw();
 	}
 	_drawBuffer();
-	Sleep(1000 / _fps);
+	Sleep((1000 / _fps) - (time(0) - start));
 }
 
 void tgc::Game::setFPSLimit(int fps)
@@ -106,7 +107,7 @@ void tgc::Game::loadMap(std::string filename)
 			if (ch == '#') {
 				_objects.insert(new _Wall(i, j));
 			}
-			else if (ch == 'x') {
+			else if (ch == 'o') {
 				_objects.insert(new _Player(i, j));
 			}
 		}

@@ -37,7 +37,7 @@ namespace tgc {
 
 tgc::_Player::_Player(int x = 0, int y = 0)
 {
-	_symbol = 'x';
+	_symbol = 'o';
 	_pos[0] = x;
 	_pos[1] = y;
 }
